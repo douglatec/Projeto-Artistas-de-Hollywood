@@ -8,7 +8,7 @@ namespace ProjetoArtistasDeHollywood.Dominio
 {
     class Artista
     {
-          public int codigo { get; set; }
+        public int codigo { get; set; }
         public string nome { get; set; }
         public double cache{get; set;}
 

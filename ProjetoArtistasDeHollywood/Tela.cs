@@ -63,19 +63,44 @@ namespace ProjetoArtistasDeHollywood
             int ano = int.Parse(Console.ReadLine());
             Filme y = new Filme(codigo,titulo,ano);
             Program.ListaDeFilme.Add(y);
+
             Console.Write("Quantas participações tem o filme? ");
             int qteFilme = int.Parse(Console.ReadLine());
             for (int i = 1; i <= qteFilme; i++) 
             {
-                Console.WriteLine("Digite os dados da "+i+"ª participação:");                Console.Write("Artista (código):");
+                Console.WriteLine("Digite os dados da "+i+"ª participação:");
+                Console.Write("Artista (código):");
                 int codArtista = int.Parse(Console.ReadLine());
+                int pos = Program.listaDeArtista.FindIndex(x => x.codigo == codArtista);
+                if (pos == -1)
+                {
+                    //throw new ModelException("Codigo do produto não encontrado: " + codProduto);
+                }
                 Console.Write("Desconto:");
-                double desconto = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);            
-            }
-     
+                double desconto = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+                Participacao z = new Participacao(desconto,Program.listaDeArtista[pos]);
+                y.participacao.Add(z);
+            }   
         
         
         }
+
+
+
+        public static void mostarParticipacoe() 
+        {
+            Console.Write("Digite o código do filme:");
+            int codFilme = int.Parse(Console.ReadLine());
+            int pos = Program.ListaDeFilme.FindIndex(x => x.codigo == codFilme);
+            if (pos == -1) 
+            {
+            
+            }
+            Console.WriteLine(Program.ListaDeFilme[pos]);
+            Console.WriteLine();      
+        
+        }
+
 
 
 

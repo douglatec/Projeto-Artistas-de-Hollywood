@@ -8,25 +8,28 @@ namespace ProjetoArtistasDeHollywood.Dominio
 {
     class Participacao
     {
-        double desconto { get; set; }
-        Artista artista { get; set; }
+        public double desconto { get; set; }
+        public Artista artista { get; set; }
+       
 
 
 
-        public Participacao(double desconto) 
+        public Participacao(double desconto, Artista artista) 
         {
             this.desconto = desconto;
+            this.artista = artista;           
             
         }
 
 
 
-        /*public double custo() 
-        {
-
-
-            return;
-        }*/
+        public double custo()
+        {          
+           
+           desconto = artista.cache - desconto;
+            
+            return desconto;
+        }
 
 
         public override string ToString()

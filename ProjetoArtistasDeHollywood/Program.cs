@@ -10,6 +10,7 @@ namespace ProjetoArtistasDeHollywood
     {
         public static List<Artista> listaDeArtista = new List<Artista>();
         public static List<Filme> ListaDeFilme = new List<Filme>();
+        public static List<Participacao> listaDeParticipacoes = new List<Participacao>();
 
 
 
@@ -50,7 +51,7 @@ namespace ProjetoArtistasDeHollywood
                 }
                 else if (opcao == 4)
                 {
-
+                    Tela.mostarParticipacoe();
                 }
                 else if (opcao == 5)
                 {
