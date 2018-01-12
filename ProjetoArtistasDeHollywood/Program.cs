@@ -33,7 +33,16 @@ namespace ProjetoArtistasDeHollywood
                 Console.Clear();
                 Tela.mostrarMenu();
 
-                opcao = int.Parse(Console.ReadLine());
+                try
+                {
+                    opcao = int.Parse(Console.ReadLine());
+                }
+                catch (Exception e) 
+                {
+                    Console.WriteLine("Erro inexperado: " + e.Message);
+                    opcao = 0;
+                }
+
 
 
                 if (opcao == 1)
@@ -43,20 +52,49 @@ namespace ProjetoArtistasDeHollywood
                 }
                 else if (opcao == 2)
                 {
-                    Tela.cadastrarArtista();
+                    try
+                    {
+                        Tela.cadastrarArtista();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Erro Inexperado: " + e.Message);
+                    }
                 }
+
                 else if (opcao == 3)
                 {
-                    Tela.cadastroDeFilme();
+                    try
+                    {
+                        Tela.cadastroDeFilme();
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine("Erro Inexperado: " + e.Message);
+                    }
                 }
                 else if (opcao == 4)
                 {
-                    Tela.mostarParticipacoe();
+                    try
+                    {
+                        Tela.mostarParticipacoe();
+                    }
+                    catch (ModelException e)
+                    {
+                        Console.WriteLine("Erro de Negocio: " + e.Message);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Erro Inexperado: " + e.Message);
+                    }
                 }
                 else if (opcao == 5)
                 {
                     Console.Write("Fim de Programa!");
-
+                }
+                else
+                {
+                    Console.WriteLine("Opção Invalida!");
                 }
 
                 Console.ReadLine();

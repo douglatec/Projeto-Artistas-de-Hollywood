@@ -10,6 +10,7 @@ namespace ProjetoArtistasDeHollywood.Dominio
     {
         public double desconto { get; set; }
         public Artista artista { get; set; }
+        
        
 
 
@@ -26,15 +27,16 @@ namespace ProjetoArtistasDeHollywood.Dominio
         public double custo()
         {          
            
-           desconto = artista.cache - desconto;
-            
-            return desconto;
+           double resulDesconto = artista.cache - desconto;
+
+           return resulDesconto;
         }
 
 
         public override string ToString()
         {
-            return desconto.ToString("F2",CultureInfo.InvariantCulture);
+            return string.Format("{0}, Cachê: {1}, Desconto: {2}, Custo: {3}", artista.nome,artista.cache, desconto.ToString("F2", CultureInfo.InvariantCulture),custo().ToString("F2",CultureInfo.InvariantCulture));  
+                
         }
     }
 }

@@ -54,10 +54,5 @@ namespace ProjetoArtistasDeHollywood.Dominio
                 s = s + "Custo total do filme:" + custoTotal().ToString("F2", CultureInfo.InvariantCulture);
                 return s;               
         }
-
-
-
-
-
     }
 }

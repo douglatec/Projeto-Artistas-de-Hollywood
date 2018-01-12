@@ -94,15 +94,11 @@ namespace ProjetoArtistasDeHollywood
             int pos = Program.ListaDeFilme.FindIndex(x => x.codigo == codFilme);
             if (pos == -1) 
             {
-            
+                throw new ModelException("Codigo do filme não encontrado: " + codFilme);
             }
             Console.WriteLine(Program.ListaDeFilme[pos]);
             Console.WriteLine();      
         
         }
-
-
-
-
     }
 }
